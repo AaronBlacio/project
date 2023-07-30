@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.mail import send_mail
 from django.http import HttpResponse
 from .models import Post
@@ -38,3 +38,10 @@ def noticias(request):
     
    posts=Post.objects.all()
    return render(request, "boceto/noticias.html", {"posts": posts})
+
+"""en esta funcion le enviamos como parametro la id de la noticia
+creamos una variable noticia que obtendra de post la id de los post hechos
+nos retorno un archivo html que nos mostrara la notica completa """
+def ver_noticia(request, noticia_id):
+    noticia = get_object_or_404(Post, id=noticia_id)
+    return render(request, 'boceto/ver_noticia.html', {'noticia': noticia})
