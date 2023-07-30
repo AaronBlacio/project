@@ -30,3 +30,6 @@ def enviar_correo(request):
 
     # Enviamos el valor de "enviado_correctamente" como parte del contexto para usarlo en el if 
     return render(request, 'boceto/home.html', {'enviado_correctamente': enviado_correctamente})
+
+def noticias(request):  
+   return render(request, "boceto/noticias.html")

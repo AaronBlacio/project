@@ -125,7 +125,9 @@
                         <p>Alguna descrición de la certificación.</p>
                     </section>
                     <section class="col-4 col-6-medium col-12-xsmall">
-                        <span class="icon solid alt major fa-paper-plane"></span>
+                        <div class="image-box d-flex justify-content-center align-items-center">
+                            <img class="img-fluid" src="{% static 'boceto/images/BPM300.png' %}" alt="img3" style="width: 60%; height: 60%;filter: drop-shadow(5px 5px 5px #0e0d0d8c);">
+                        </div>
                         <h3>Buenas Practicas de Manufactura</h3>
                         <p>Alguna descrición de la certificación.</p>
                     </section>
@@ -156,8 +158,8 @@
 <section id="five" class="wrapper style2 special fade">
     <div class="container">
         <header>
-            <h2>Contáctanos  </h2>
-            <p>No nos escribas, nosotros te escribiremos</p>
+            <h2 style="color: white;">Contáctanos  </h2>
+            <p style="color: white;">No nos escribas, nosotros te escribiremos</p>
         </header>
         <!--aqui ve si es true el valor muestra este mensaje-->
         {% if enviado_correctamente %}
