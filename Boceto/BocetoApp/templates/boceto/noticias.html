@@ -1,9 +1,23 @@
 {% extends "boceto/base.html" %}
 {% load static %} 
 {% block content %}
-<div class="is-preload">
-    <br>
-    <br>
-    <h2>Aqui van las noticias</h2>
-</div>
+<br>
+<br>
+    <section class="news-container">
+        {% for post in posts %}
+        <article class="news-article">
+            <h2 style="color: black; font-family: Georgia, 'Times New Roman', Times, serif;">{{ post.titulo }}</h2>
+            <p style="color: black; font-family: Georgia, 'Times New Roman', Times, serif;" class="news-date">Fecha: <span class="date">{{ post.created }}</span></p>
+            
+            <span class="image"><img src="{% if post.imagen %}{{post.imagen.url}}{% else %}{% static 'boceto/images/pic01.png' %}{% endif %}" alt="Imagen de la Noticia" class="img-flud"></span>
+
+            <p style="color: black; font-family: Georgia, 'Times New Roman', Times, serif;text-align: justify;">{{ post.contenido }}</p>
+            <div style="font-size: 0.9em; margin-top: 10px;" class="news-author">
+                Autor: {{ post.autor }}
+            </div>
+            <a href="">Leer más</a>
+        </article>
+        {% endfor %}
+    </section>
+   
 {% endblock %}

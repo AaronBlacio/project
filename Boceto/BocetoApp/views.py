@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.http import HttpResponse
+from .models import Post
 
 
 # Create your views here.
@@ -31,5 +32,9 @@ def enviar_correo(request):
     # Enviamos el valor de "enviado_correctamente" como parte del contexto para usarlo en el if 
     return render(request, 'boceto/home.html', {'enviado_correctamente': enviado_correctamente})
 
+"""creamos una variable llamada posts y le enviamos todo lo que contenga la clase Post creada en models.py
+y le mandamos en el return los posts"""
 def noticias(request):  
-   return render(request, "boceto/noticias.html")
+    
+   posts=Post.objects.all()
+   return render(request, "boceto/noticias.html", {"posts": posts})
