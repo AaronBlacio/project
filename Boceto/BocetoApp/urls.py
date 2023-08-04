@@ -6,7 +6,7 @@ urlpatterns = [
    
     path('',views.home, name="index"),
     path('base/',views.base, name="base"),
-    path('', views.enviar_correo, name='enviar_correo'),
+    path('enviado_correctamente/', views.enviar_correo, name='enviar_correo'),
     path('noticias/', views.noticias, name='noticias'),
     #esta url recibira la id de la noticia seleccionada y mediante esto nos mostrara la info completa de esa noticia
     path('noticia/<int:noticia_id>/', views.ver_noticia, name='ver_noticia'),
