@@ -40,19 +40,14 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="{% url 'index' %}">Inicio</a></li>
-						<li><a href="#">Nosotros</a>
-							<ul>
-								<li><a href="#">Quiénes somos</a></li>
-								<li><a href="">Contáctanos</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Colaboradores</a></li>
-						<li><a href="#">Labor Social</a></li>
+						<li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+						<li><a href="{% url 'colaboradores' %}">Colaboradores</a></li>
+						<li><a href="{% url 'labor' %}">Labor Social</a></li>
 						<li><a href="{% url 'noticias' %}">Noticias</a></li>
 						<li><a href="#">Emprendimientos</a>
 							<ul>
-								<li><a href="#">Bana Pan</a></li>
-								<li><a href="#">Cooporoverdesa</a></li>
+								<li><a href="{% url 'banapan' %}">Bana Pan</a></li>
+								<li><a href="{% url 'cooporoverdesa' %}">Cooporoverdesa</a></li>
 							</ul>
 						</li>
 					</ul>

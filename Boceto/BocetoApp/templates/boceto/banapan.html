@@ -1,0 +1,61 @@
+{% extends "boceto/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Main -->
+<div id="main" class="wrapper style1">
+    <div class="container">
+        <header class="major">
+            <h2>PROYECTO DE BENEFICIO SOCIAL</h2>
+            <p>Dirigido a esposas e hijas de socias, esposas e hijas de trabajdores agricolas de cada una de nuestras fincas 
+             y a jóvenes emprendedores relacionados a nuestra organización.
+            Somos 25 socios, 295 trabajadores directos y 700 personas beneficiadas con el objetivo de mejorar las condiciones de vida de quienes colaboran con nuestra Cooperativa Oro Verde.</p>
+        </header>
+        <div class="row gtr-150">
+            <div class="col-8 col-12-medium">
+
+                <!-- Content -->
+                    <section id="content">
+                        <a href="#" class="image fit"><img src="{% static 'boceto/images/BanaPan.jpeg' %}" alt="" /></a>
+                        <h3>PRODUCCION DE NUESTRA HARINA DE BANANO ORGANICO</h3>
+                        <p>En el mercado local es muy difícil conseguir harina de banano, por lo tanto produciremos nuestra propia harina de banano orgánico por lo que tenemos que conseguir un Deshidratador y un Molino Industrial pulverizador.</p>
+                        <header class="major">
+                            <h2>PUNTO DE VENTAS</h2>
+                        </header>
+                        <p>Estará ubicado en la via la ferroviaria en un sector muy comercial en la que funcionará nuestra Panaderia – Pastelería.</p>
+                        <p>Contará con tres personas operarias y adicionalmente tanto para la logística y control estaremos el personal administrativo de la cooperativa.</p>
+                        <p>Se realizará la adquisición de los equipos necesarios para su funcionamiento como son Horno, batidora, mezcladora, mesas e implementos, etc (industriales)</p>
+                    </section>
+            </div>
+            <div class="col-4 col-12-medium">
+
+                <!-- Sidebar -->
+                    <section id="sidebar">
+                        <section>
+                            <h3>BANA CUPCAKES - MUFFINS</h3>
+                            <a href="#" class="image fit" style="max-width: 200px;"><img src="{% static 'boceto/images/MUFFINS.jpeg' %}" alt="" /></a>
+                        </section>
+                                         
+                        <section>
+                            <h3>BANA - CAKES</h3>
+                            <a href="#" class="image fit" style="max-width: 200px;"><img src="{% static 'boceto/images/CAKES.png' %}" alt="" /></a>
+                        </section>
+                                        
+                        <section>
+                            <h3>BANA - GALLETAS</h3>
+                            <a href="#" class="image fit" style="max-width: 200px;"><img src="{% static 'boceto/images/GALLETAS.png' %}" alt="" /></a>
+                        </section>
+                                            
+                        <section>
+                            <h3>BANA - PUDIN</h3>
+                            <a href="#" class="image fit" style="max-width: 200px;"><img src="{% static 'boceto/images/PUDIN.png' %}" alt="" /></a>
+                        </section>
+                        
+                    </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

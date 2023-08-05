@@ -6,20 +6,44 @@ from .models import Post
 
 # Create your views here.
 
-def home(request):  
-   return render(request, "boceto/home.html")
 
-def base(request):  
-   return render(request, "boceto/base.html")
+def home(request):
+    return render(request, "boceto/home.html")
+
+
+def base(request):
+    return render(request, "boceto/base.html")
+
+
+def nosotros(request):
+    return render(request, "boceto/nosotros.html")
+
+
+def colaboradores(request):
+    return render(request, "boceto/colaboradores.html")
+
+
+def labor(request):
+    return render(request, "boceto/labor.html")
+
+
+def banapan(request):
+    return render(request, "boceto/banapan.html")
+
+
+def cooporoverdesa(request):
+    return render(request, "boceto/cooporoverdesa.html")
 
 
 def enviar_correo(request):
-    enviado_correctamente = False# Variable que va a determinar si se envió el correo correctamente , nos servira para el if del template
-    if request.method == 'POST':
-        email = request.POST.get('email', '')  # Obtenemos el correo electrónico ingresado por el usuario en home.html
-         # Ahora enviamos el correo electrónico
-        subject = 'Gracias por ponerte en contacto con nosotros'
-        message = f'Hola,\n\nGracias por ponerte en contacto con nosotros. Pronto te responderemos.\n\nAtentamente,\nEl equipo de Cooperativa Oro Verde \nEste canal fue creado para compartir informacion escencial \npara tu funcionamiento en nuestra plataforma.Los mensajes son automaticos,\npor lo tanto no podremos responder tus comentarios por esta via'
+    enviado_correctamente = False  # Variable que va a determinar si se envió el correo correctamente , nos servira para el if del template
+    if request.method == "POST":
+        email = request.POST.get(
+            "email", ""
+        )  # Obtenemos el correo electrónico ingresado por el usuario en home.html
+        # Ahora enviamos el correo electrónico
+        subject = "Gracias por ponerte en contacto con nosotros"
+        message = f"Hola,\n\nGracias por ponerte en contacto con nosotros. Pronto te responderemos.\n\nAtentamente,\nEl equipo de Cooperativa Oro Verde \nEste canal fue creado para compartir informacion escencial \npara tu funcionamiento en nuestra plataforma.Los mensajes son automaticos,\npor lo tanto no podremos responder tus comentarios por esta via"
         from_email = email  # le mandamos la variable email para que envie el mensaje al correo ingresado por el usuario como remitente
         recipient_list = [email]
         try:
@@ -28,26 +52,32 @@ def enviar_correo(request):
         except Exception as e:
             pass  # No es necesario hacer nada aquí, la variable seguirá siendo False
 
-    # Enviamos el valor de "enviado_correctamente" como parte del contexto para usarlo en el if 
-    return render(request, 'boceto/home.html', {'enviado_correctamente': enviado_correctamente})
+    # Enviamos el valor de "enviado_correctamente" como parte del contexto para usarlo en el if
+    return render(
+        request, "boceto/home.html", {"enviado_correctamente": enviado_correctamente}
+    )
+
 
 """creamos una variable llamada posts y le enviamos todo lo que contenga la clase Post creada en models.py
 y le mandamos en el return los posts"""
-def noticias(request):  
-    
-   posts=Post.objects.all()
-   #le enviamos la variable posts que almacena todos los posts subidos para asi poder recorrerlos en un for 
-   return render(request, "boceto/noticias.html", {"posts": posts})
+
+
+def noticias(request):
+    posts = Post.objects.all()
+    # le enviamos la variable posts que almacena todos los posts subidos para asi poder recorrerlos en un for
+    return render(request, "boceto/noticias.html", {"posts": posts})
 
 
 """en esta funcion le enviamos como parametro la id de la noticia
 creamos una variable noticia que obtendra de post la id de los post hechos
 nos retorno un archivo html que nos mostrara la notica completa """
+
+
 def ver_noticia(request, noticia_id):
     """
     The function "ver_noticia" retrieves a specific news article based on its ID and renders it in a
     template.
-    
+
     :param request: The request object represents the HTTP request that the user made to access the
     view. It contains information such as the user's browser details, the requested URL, and any data
     sent with the request
@@ -60,4 +90,4 @@ def ver_noticia(request, noticia_id):
 
     noticia = get_object_or_404(Post, id=noticia_id)
 
-    return render(request, 'boceto/ver_noticia.html', {'noticia': noticia})
+    return render(request, "boceto/ver_noticia.html", {"noticia": noticia})

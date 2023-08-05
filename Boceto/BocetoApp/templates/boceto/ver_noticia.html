@@ -2,13 +2,14 @@
 {% load static %}
 
 {% block content %}
+<div id="main" class="wrapper style1">
     <div style="max-width: 800px; margin: 0 auto;">
         <h2 style="color: #333; font-family: 'Arial', sans-serif; margin-bottom: 10px;">{{ noticia.titulo }}</h2>
         <p style="color: #666; font-family: 'Arial', sans-serif; margin-bottom: 5px;" class="news-date">
             Fecha: <span class="date">{{ noticia.created }}</span>
         </p>
 
-        <div style="display: flex; justify-content: center; align-items: center; max-height: 300px; overflow: hidden;">
+        <div style="display: flex; justify-content: center; align-items: center; max-height: 300px; overflow: hidden; border-radius: 5px;">
             <img src="{% if noticia.imagen %}{{ noticia.imagen.url }}{% else %}{% static 'boceto/images/pic01.png' %}{% endif %}" alt="Imagen de la Noticia" style="width: 100%; height: auto; object-fit: cover;">
         </div>
 
@@ -20,6 +21,7 @@
             Autor: {{ noticia.autor }}
         </div>
 
-        <a href="{% url 'noticias' %}" style="display: inline-block; margin-top: 20px; color: #007bff; font-weight: bold; text-decoration: none;">Volver a la lista de noticias</a>
+        <a href="{% url 'noticias' %}" style="display: inline-block; margin-top: 20px;  font-weight: bold; text-decoration: none;">Volver a la lista de noticias</a>
     </div>
+</div>
 {% endblock %}
