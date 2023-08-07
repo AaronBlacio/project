@@ -1,19 +1,17 @@
 <!DOCTYPE HTML>
 <html lang="es">
 	<head>
+		<!-- Se carga la carpeta static para utilizar los estilos, imágenes, etc.}-->
 		{% load static %}
 		<title>Cooperativa de Producción Agrícola Oro Verde - Cooporoverde</title>
 		<meta charset="utf-8" />
-		<link rel="icon"
-    	href="https://www.cooporoverde.org/wp-content/uploads/2020/07/logo_coop_oroverde-removebg-preview-150x150.png"
-   		 sizes="32x32">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{% static 'boceto/css/main.css' %}" />
-		<link rel="icon" href="{% static 'boceto/images/Favicon.ico' %}" type="image/x-icon">
+		<link rel="icon" href="{% static 'boceto/images/favicon.ico' %}" type="image/x-icon">
 		<noscript>
 			<link rel="stylesheet" href="{% static 'boceto/css/noscript.css' %}" />
 		</noscript>
-
+		<!-- Se agregó este estilo para poder cargar la imángen del banner-->
 		<style>
 			#banner { 
 		background-attachment: fixed;
@@ -26,17 +24,17 @@
 		position: relative;
 		text-align: center;
 		z-index: 21;
-	}
+		}
 		</style>
 	</head>
 
 	<body class="is-preload landing">
 		<div id="page-wrapper">
-
 			<!-- Header -->
 			<header id="header"
 			style="position: fixed; background-color: #EEDEC5; box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);">
-				<h1 id="logo"><a href="{% url 'index' %}">Cooporoverde</a></h1>
+			<!-- Se carga la imagen del logo-->	
+			<h1 id="logo"><a href="{% url 'index' %}">Cooporoverde</a></h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="{% url 'index' %}">Inicio</a></li>
@@ -44,7 +42,7 @@
 						<li><a href="{% url 'colaboradores' %}">Colaboradores</a></li>
 						<li><a href="{% url 'labor' %}">Labor Social</a></li>
 						<li><a href="{% url 'noticias' %}">Noticias</a></li>
-						<li><a href="#">Emprendimientos</a>
+						<li><a href="">Emprendimientos</a>
 							<ul>
 								<li><a href="{% url 'banapan' %}">Bana Pan</a></li>
 								<li><a href="{% url 'cooporoverdesa' %}">Cooporoverdesa</a></li>
@@ -54,9 +52,11 @@
 				</nav>
 			</header>
 			<br>
+			<!-- Aquí es donde se va a cargar el contenido de los demas templates-->
 			{% block content %}
 
 			{% endblock %}
+
 			<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">

@@ -1,46 +1,49 @@
+<!-- Se hereda el contenido del archivo base.html-->
 {% extends "boceto/base.html" %}
+
+<!-- Se carga la carpeta static -->
 {% load static %}
 
+<!-- Empieza el contenido de esta página-->
 {% block content %}
 
-<!-- Main -->
-<div id="main" class="wrapper style1">
-    <div class="container">
-        <header class="major">
-            <h2>Constantemente estamos participando en Ferias y capacitaciones para la mejora continua de nuestros socios.</h2>
+    <!-- Main -->
+    <div id="main" class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <h2>Constantemente estamos participando en Ferias y capacitaciones para la mejora continua de nuestros socios.</h2>
 
-        </header>
-        <div class="row gtr-150">
-            <div class="col-4 col-12-medium">
+            </header>
+            <div class="row gtr-150">
+                <div class="col-4 col-12-medium">
 
-                <!-- Sidebar -->
-                    <section id="sidebar">
-                        <section>
-                            <a href="#" class="image fit"><img src="{% static 'boceto/images/viveros1-768x576.jpg' %}" alt="" /></a>
-                            <h3>Viveros</h3>
-                            <p>Visita a las instalaciones de Viveros del Concejo Provincial de El Oro en la Cuca Arenillas.</p>
+                    <!-- Sidebar -->
+                        <section id="sidebar">
+                            <section>
+                                <a href="#" class="image fit"><img src="{% static 'boceto/images/viveros1-768x576.jpg' %}" alt="" /></a>
+                                <h3>Viveros</h3>
+                                <p>Visita a las instalaciones de Viveros del Concejo Provincial de El Oro en la Cuca Arenillas.</p>
+                            </section>
+                            <hr />
+                            <section>
+                                <a href="#" class="image fit"><img src="{% static 'boceto/images/reforestacion5-768x576.jpeg' %}" alt="" /></a>
+                                <h3>Sembrando vida</h3>
+                                <p>Lanzamiento de siembra de plantas del plan de reforestación.</p>
                         </section>
-                        <hr />
-                        <section>
-                            <a href="#" class="image fit"><img src="{% static 'boceto/images/reforestacion5-768x576.jpeg' %}" alt="" /></a>
-                            <h3>Sembrando vida</h3>
-                            <p>Lanzamiento de siembra de plantas del plan de reforestación.</p>
-                    </section>
 
-            </div>
-            <div class="col-8 col-12-medium imp-medium">
+                </div>
+                <div class="col-8 col-12-medium imp-medium">
 
-                <!-- Content -->
-                    <section id="content">
-                        <a href="#" class="image fit"><img src="{% static 'boceto/images/expoferia3-768x576.jpeg' %}" alt="" /></a>
-                        <h3>Expo Feria</h3>
-                        <p>Participamos activamente en ferias internacionales para dar a conocer nuestro producto y formar alianzas estratégicas para el beneficio de nuestra organización.</p>
-                        
-                    </section>
-
+                    <!-- Content -->
+                        <section id="content">
+                            <a href="#" class="image fit"><img src="{% static 'boceto/images/expoferia3-768x576.jpeg' %}" alt="" /></a>
+                            <h3>Expo Feria</h3>
+                            <p>Participamos activamente en ferias internacionales para dar a conocer nuestro producto 
+                                y formar alianzas estratégicas para el beneficio de nuestra organización.</p>
+                        </section>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
