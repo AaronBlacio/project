@@ -16,6 +16,7 @@ urlpatterns = [
     # esta url recibira la id de la noticia seleccionada y mediante esto nos mostrara la info completa de esa noticia
     path("noticia/<int:noticia_id>/", views.ver_noticia, name="ver_noticia"),
 ]
+
 """urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) es una configuración necesaria para 
 que Django pueda servir archivos de medios durante el desarrollo de tu aplicación. 
 Permite acceder y mostrar los archivos multimedia cargados por los usuarios a través de sus respectivas URL.en fin nos sirve para 

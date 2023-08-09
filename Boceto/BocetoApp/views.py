@@ -5,8 +5,6 @@ from .models import Post
 
 
 # Create your views here.
-
-
 def home(request):
     return render(request, "boceto/home.html")
 
@@ -62,32 +60,32 @@ def enviar_correo(request):
 y le mandamos en el return los posts"""
 
 
+
 def noticias(request):
     posts = Post.objects.all()
     # le enviamos la variable posts que almacena todos los posts subidos para asi poder recorrerlos en un for
     return render(request, "boceto/noticias.html", {"posts": posts})
 
 
+
 """en esta funcion le enviamos como parametro la id de la noticia
 creamos una variable noticia que obtendra de post la id de los post hechos
 nos retorno un archivo html que nos mostrara la notica completa """
 
-
 def ver_noticia(request, noticia_id):
     """
-    The function "ver_noticia" retrieves a specific news article based on its ID and renders it in a
-    template.
+     La función "ver_noticia" recupera un artículo de noticias específico basado en su ID y lo presenta en un
+     plantilla.
 
-    :param request: The request object represents the HTTP request that the user made to access the
-    view. It contains information such as the user's browser details, the requested URL, and any data
-    sent with the request
-    :param noticia_id: The `noticia_id` parameter is the unique identifier of the news article that the
-    user wants to view. It is used to retrieve the specific news article from the database using the
-    `get_object_or_404` function
-    :return: a rendered HTML template called 'ver_noticia.html' with the context data of the 'noticia'
-    object.
-    """
-
+     :param request: El objeto request representa la solicitud HTTP que el usuario realizó para acceder al
+     vista. Contiene información como los detalles del navegador del usuario, la URL solicitada y cualquier dato
+     enviado con la solicitud
+     :param noticia_id: El parámetro `noticia_id` es el identificador único de la noticia que
+     usuario quiere ver. Se utiliza para recuperar el artículo de noticias específico de la base de datos utilizando el
+     Función `get_object_or_404`
+     :return: una plantilla HTML renderizada llamada 'ver_noticia.html' con los datos de contexto de la 'noticia'
+     objeto.
+     """
     noticia = get_object_or_404(Post, id=noticia_id)
 
     return render(request, "boceto/ver_noticia.html", {"noticia": noticia})
