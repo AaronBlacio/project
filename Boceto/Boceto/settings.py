@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -124,18 +125,16 @@ MEDIA_URL = "/media/"
 # almacenado en el proyecto.
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-
-"agregar estas dos lineas para trabajar con el envio de correos"
+from .config import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
+# Configuración para el envío de correos
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
-"esta es la configuracion que se usara para enviar el correo"
+# Configuración de autenticación
 EMAIL_USE_TLS = True
-"este es el puerto q usa tls"
+EMAIL_HOST_USER = EMAIL_HOST_USER  
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD  
+# Puerto que usa TLS
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "regaloyt334@gmail.com"
-EMAIL_HOST_PASSWORD = "dcwwvxklrlpmhors"
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

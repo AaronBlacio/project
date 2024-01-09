@@ -183,32 +183,30 @@
         </div>
     </section>
 
-    <!-- Sección 5 contáctanos -->
-    <section id="five" class="wrapper style2 special fade">
-        <div class="container">
-            <header>
-                <h2 style="color: white;">Contáctanos</h2>
-                <p style="color: white;">No dudes en dejarnos tu mensaje, y nos pondremos en contacto contigo en breve.</p>
-            </header>
-
-            <!--aqui ve si es true el valor muestra este mensaje-->
+    <!-- contactanos -->
+<section id="five" class="wrapper style2 special fade">
+    <div class="container">
+        <header>
+            <h2 style="color: white;">Contáctanos  </h2>
             {% if enviado_correctamente %}
                 <p style="color: white;font-size: larger;">Correo enviado correctamente. 
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#11c02e}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg> </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#11c02e}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </p>
+            {% else %}
+                <p style="color: white;">No nos escribas, nosotros te escribiremos</p>
             {% endif %}
-            <form  method="post" action="{% url 'enviar_correo' %}" class="cta">
-                <div class="row gtr-uniform gtr-50">
-                    {% csrf_token %}
-                    <div class="col-8 col-12-xsmall">
-                        <input type="email" name="email" id="email" placeholder="Escribe tu correo electrónico" />
-                    </div>
-
-                    <div class="col-4 col-12-xsmall">
-                        <input class="fit primary" type="submit" value="Enviar"/>
-                    </div>
+        </header>
+        <!--aqui ve si es true el valor muestra este mensaje-->
+        <form method="post" action="{% url 'enviar_correo' %}" class="cta">
+            <div class="row gtr-uniform gtr-50">
+                {% csrf_token %}
+                <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email"
+                        placeholder="Escribe tu correo electrónico" required /></div>
+                <div class="col-4 col-12-xsmall"><input type="submit" value="Enviar" class="fit primary" />
                 </div>
-            </form>
-        </div>
-    </section>
+            </div>
+        </form>
+    </div>
+</section>
 
 {% endblock %}
