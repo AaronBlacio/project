@@ -35,12 +35,13 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     "jazzmin",
     "django.contrib.admin",
+    "BocetoApp",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "BocetoApp",
+    
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "Boceto.urls"
+
 
 TEMPLATES = [
     {

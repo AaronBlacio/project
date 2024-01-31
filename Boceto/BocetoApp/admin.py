@@ -4,7 +4,8 @@ from .models import  Post
 
 class PostAdmin(admin.ModelAdmin):
     list_display=("titulo","autor",)
-    readonly_fields=('created','updated')
+    #para que no se muestre en el admin 
+    exclude = ('created', 'updated')
 
 
 admin.site.register(Post, PostAdmin)
