@@ -4,10 +4,7 @@ from django.http import HttpResponse, Http404
 from django.views.decorators.http import require_POST
 from django.core.exceptions import ValidationError
 from .models import Post
-from django.contrib.auth import authenticate, login
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
+
 
 # Vistas para renderizar HTML
 def home(request):
