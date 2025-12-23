@@ -292,10 +292,11 @@ body {
     z-index: -1;
 }
 
+/* Hero content con padding-top para evitar que quede bajo la navbar */
 .hero-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-xxl) var(--spacing-xl);
+    padding: calc(var(--spacing-xxl) + 80px) var(--spacing-xl) var(--spacing-xxl);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xxl);
@@ -429,15 +430,18 @@ body {
     border: 2px solid transparent;
 }
 
+/* Botón primario - Verde Oscuro para máxima conversión */
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-    color: var(--color-black);
-    box-shadow: var(--shadow-gold);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-white);
+    box-shadow: 0 4px 20px rgba(27, 94, 32, 0.35);
+    font-weight: 700;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 30px rgba(27, 94, 32, 0.45);
+    background: linear-gradient(135deg, var(--color-primary-dark), #062D0A);
 }
 
 .btn-primary:active {
@@ -505,8 +509,9 @@ body {
     z-index: -1;
 }
 
+/* Logo más grande para llenar mejor el círculo */
 .hero-logo-wrapper img {
-    width: 220px;
+    width: 260px;
     height: auto;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     transition: transform var(--transition-normal);
