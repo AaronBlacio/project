@@ -1,211 +1,385 @@
-<!-- Se hereda el contenido del archivo base.html-->
 {% extends "boceto/base.html" %}
-
-<!-- Se carga la carpeta static -->
 {% load static %}
 
-<!-- Empieza el contenido de esta página-->
+{% block title %}Inicio{% endblock %}
+
 {% block content %}
- 
-    <!-- Banner -->
-    <section id="banner">
-        <div class="content">
-            <header>
-                <h2>Organización de productores <br>
-                    de Banano orgánico
-                </h2>
-                <p>Nuestra fruta es comercializada en varios países europeos <br>
-                    tales como Alemania, Italia, Francia y contamos con <br>
-                    Certificación Fair Trade, Orgánica, Global Gap, Y Buenas <br>
-                    Practicas de Manufactura.
-                </p>
-            </header>
-            <span class="image"><img src="{% static 'boceto/images/pic01.png' %}" alt="" /></span>
-        </div>
-        <a href="#one" class="goto-next scrolly">Next</a>
-    </section>
 
-    <!-- Sección 1 -->
-    <section id="one" class="spotlight style1 bottom">
-        <!-- Se carga la imagen del logo -->
-        <span class="image fit main"><img src="{% static 'boceto/images/pic02.jpg' %}" alt="" /></span>
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 col-12-medium">
-                        <header>
-                            <h2>Nuestra Cooperativa</h2>
-                            <p>Somos una organización de pequeños productores de banano asentada en la zona sur de Ecuador.</p>
-                        </header>
-                    </div>
+<!-- ============================================
+     🌟 HERO SECTION PREMIUM
+     ============================================ -->
+<section class="hero-premium" id="hero">
+    <!-- Background Image -->
+    <div class="hero-background">
+        <img src="{% static 'boceto/images/banner.jpg' %}" alt="Plantación de banano orgánico en Ecuador" />
+    </div>
 
-                    <div class="col-4 col-12-medium">
-                        <p>El cultivo del banano es la principal fuente de
-                            ingresos de nuestros socios. Nuestra fruta es
-                            comercializada en varios países europeos tales
-                            como Alemania, Italia, Francia y contamos con
-                            Certificación Fair Trade, Organica, Global Gap,
-                            Y Buenas Practicas de Manufactura.
-                        </p>
-                    </div>
+    <!-- Overlay Gradiente para legibilidad -->
+    <div class="hero-overlay"></div>
 
-                    <div class="col-4 col-12-medium">
-                        <p>La Cooperativa Agrícola Oro Verde fue fundada el
-                            11 de septiembre de 2017 por 12 socios. En la
-                            actualidad, hemos crecido y contamos con 25 socios
-                            dedicados a la producción de banano, de los cuales
-                            14 son productores orgánicos y 11 siguen métodos
-                            convencionales.
-                        </p>
-                    </div>
-                </div>
+    <!-- Elementos flotantes decorativos -->
+    <span class="hero-floating hero-floating-1">🍌</span>
+    <span class="hero-floating hero-floating-2">🌿</span>
+    <span class="hero-floating hero-floating-3">🌱</span>
+
+    <!-- Contenido Principal -->
+    <div class="hero-content">
+        <!-- Texto del Hero -->
+        <div class="hero-text">
+            <!-- Badge de certificación -->
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                </svg>
+                Certificación Fair Trade
+            </div>
+
+            <!-- Título Principal -->
+            <h1 class="hero-title">
+                Banano Orgánico Premium
+                <span>de Ecuador para el Mundo</span>
+            </h1>
+
+            <!-- Subtítulo -->
+            <p class="hero-subtitle">
+                Somos una cooperativa de pequeños productores comprometidos con la calidad,
+                el comercio justo y la sostenibilidad. Exportamos nuestro banano orgánico
+                certificado a Alemania, Italia y Francia.
+            </p>
+
+            <!-- Badges de Certificaciones -->
+            <div class="hero-certifications">
+                <span class="certification-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                    </svg>
+                    Fair Trade
+                </span>
+                <span class="certification-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                    </svg>
+                    100% Orgánico
+                </span>
+                <span class="certification-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                    </svg>
+                    Global Gap
+                </span>
+                <span class="certification-badge">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                    </svg>
+                    BPM
+                </span>
+            </div>
+
+            <!-- Call to Action Buttons -->
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    Solicitar Cotización
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                    </svg>
+                </a>
+                <a href="{% url 'nosotros' %}" class="btn btn-outline">
+                    Conoce Nuestra Historia
+                </a>
             </div>
         </div>
-        <a href="#two" class="goto-next scrolly">Next</a>
-    </section>
 
-    <!-- Sección 2 -->
-    <section id="two" class="spotlight style2 right">
-        <span class="image fit main"><img src="{% static 'boceto/images/pic03.jpg' %}" alt="" /></span>
-        <div class="content">
-            <header>
-                <h2>Banano Cavendish orgánico</h2>
-                <p>El banano cavendish es el de mayor consumo a nivel mundial.</p>
-            </header>
+        <!-- Logo/Visual del Hero -->
+        <div class="hero-visual">
+            <div class="hero-logo-wrapper">
+                <div class="hero-logo-glow"></div>
+                <img src="{% static 'boceto/images/pic01.png' %}" alt="Logo Cooperativa Oro Verde" />
+            </div>
+        </div>
+    </div>
 
-            <p>Es una excelente fuente de carbohidratos y fibra, lo que ayuda a mantener una buena
-                salud y un ritmo de vida saludable. <br> <br>
-                Gracias a su alto contenido de potasio y bajo
-                contenido de sodio, es especialmente beneficioso para personas con hipertensión
-                arterial o enfermedades cardíacas y vasculares.
+    <!-- Scroll Indicator -->
+    <a href="#about" class="hero-scroll">
+        <span>Descubre más</span>
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+        </svg>
+    </a>
+</section>
+
+<!-- ============================================
+     🏢 SECCIÓN SOBRE NOSOTROS
+     ============================================ -->
+<section id="about" class="section" style="background: var(--color-cream); padding: 5rem 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header">
+            <h2 class="section-title">Nuestra Cooperativa</h2>
+            <p class="section-subtitle">
+                Somos una organización de pequeños productores de banano asentada en la zona sur de Ecuador.
             </p>
         </div>
-        <a href="#three" class="goto-next scrolly">Next</a>
-    </section>
 
-    <!-- Sección 3 -->
-    <section id="three" class="spotlight style3 left">
-        <span class="image fit main bottom"><img src="{% static 'boceto/images/pic04.jpg' %}" alt="" /></span>
-        <div class="content">
-            <header>
-                <h2>Trabajamos por el bienestar de nuestra comunidad</h2>
-            </header>
-            <p>
-                Realizamos actividades de reforestación de plantas nativas como parte de nuestra vinculación con
-                nuestra comunidad. <br> <br>
-                Somos socios de el programa Sembrando Vida de la Prefectura de El Oro para devolver las especies
-                nativas de árboles a nuestras tierras
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <!-- Card 1 -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;">
+                <div
+                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #1B5E20, #4CAF50); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem;">🍌</span>
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-primary); margin-bottom: 1rem;">
+                    Producción de Calidad</h3>
+                <p style="color: var(--color-gray); line-height: 1.8;">
+                    El cultivo del banano es la principal fuente de ingresos de nuestros socios.
+                    Nuestra fruta es comercializada en varios países europeos como Alemania, Italia y Francia.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;">
+                <div
+                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #D4AF37, #E5C158); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem;">🤝</span>
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-primary); margin-bottom: 1rem;">
+                    Comercio Justo</h3>
+                <p style="color: var(--color-gray); line-height: 1.8;">
+                    Contamos con Certificación Fair Trade, Orgánica, Global Gap, y Buenas Prácticas
+                    de Manufactura para los mercados de USA, Europa y Japón.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;">
+                <div
+                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #2E7D32, #66BB6A); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.5rem;">🌱</span>
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-primary); margin-bottom: 1rem;">
+                    Nuestra Historia</h3>
+                <p style="color: var(--color-gray); line-height: 1.8;">
+                    La Cooperativa Agrícola Oro Verde fue fundada el 11 de septiembre de 2017 por 12 socios.
+                    Hoy contamos con 25 socios dedicados a la producción de banano.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     🍃 SECCIÓN BANANO CAVENDISH
+     ============================================ -->
+<section id="product" class="section" style="padding: 5rem 2rem; background: white;">
+    <div
+        style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; align-items: center;">
+        <!-- Imagen -->
+        <div style="position: relative;">
+            <img src="{% static 'boceto/images/pic03.jpg' %}" alt="Banano Cavendish Orgánico"
+                style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);" />
+            <div
+                style="position: absolute; bottom: -20px; right: -20px; background: var(--color-gold); color: var(--color-black); padding: 1rem 2rem; border-radius: 12px; font-weight: 600; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">
+                🌿 100% Orgánico
+            </div>
+        </div>
+
+        <!-- Texto -->
+        <div>
+            <span
+                style="display: inline-block; background: rgba(27, 94, 32, 0.1); color: var(--color-primary); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">
+                PRODUCTO ESTRELLA
+            </span>
+            <h2
+                style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-primary); margin-bottom: 1.5rem; line-height: 1.2;">
+                Banano Cavendish Orgánico
+            </h2>
+            <p style="font-size: 1.1rem; color: var(--color-gray); line-height: 1.8; margin-bottom: 1.5rem;">
+                El banano Cavendish es el de mayor consumo a nivel mundial. Es una excelente fuente
+                de carbohidratos y fibra, lo que ayuda a mantener una buena salud y un ritmo de vida saludable.
             </p>
-            
-        </div>
-        <a href="#four" class="goto-next scrolly">Next</a>
-    </section>
-
-
-    <!-- Sección 4 -->
-    <section id="four" class="wrapper style1 special fade-up">
-        <div class="container">
-            <header class="major">
-                <h2>Fomentamos el Comercio Justo</h2>
-                <p>
-                    Contamos con las certificaciones ORGÁNICA Y GLOBAL GAP individuales de cada uno de
-                    nuestros socios para los mercados USA, Europa y Japón
-                </p>
-            </header>
-
-            <div class="box alt">
-                <div class="row gtr-uniform">
-                    <section class="col-4 col-6-medium col-12-xsmall">
-                        <div class="image-box d-flex justify-content-center align-items-center">
-                            <!-- Se carga el ícono -->
-                            <img class="img-fluid" src="{% static 'boceto/images/fairtrade300.png' %}" alt="img1" style="width: 60%; height: 60%;filter: drop-shadow(5px 5px 5px #0e0d0d8c);">
-                        </div>
-                        <h3>Fair Trade</h3>
-                        <p>
-                            Es un sello otorgado a productos que cumplen con estándares sociales y ambientales, buscando mejorar las condiciones de vida de productores en países en desarrollo. 
-                            Garantiza precios justos, condiciones laborales dignas y sostenibilidad, fomentando el comercio equitativo y sostenible.
-                        </p>
-                    </section>
-
-                    <section class="col-4 col-6-medium col-12-xsmall">
-                        <div class="image-box d-flex justify-content-center align-items-center">
-                            <!-- Se carga el ícono -->
-                            <img class="img-fluid" src="{% static 'boceto/images/global300.png' %}" alt="img2" style="width: 60%; height: 60%;filter: drop-shadow(5px 5px 5px #0e0d0d8c);">
-                        </div>
-
-                        <h3>Global Gap</h3>
-                        <p>
-                            Es una norma de certificación agrícola que establece estándares para la producción segura y sostenible de alimentos en todo el mundo. 
-                            Ayuda a garantizar la trazabilidad, buenas prácticas agrícolas, bienestar animal y gestión ambiental en la cadena de suministro de alimentos.
-                        </p>
-                    </section>
-
-                    <section class="col-4 col-6-medium col-12-xsmall">
-                        <div class="image-box d-flex justify-content-center align-items-center">
-                            <!-- Se carga el ícono -->
-                            <img class="img-fluid" src="{% static 'boceto/images/control300.png' %}" alt="img3" style="width: 60%; height: 60%;filter: drop-shadow(5px 5px 5px #0e0d0d8c);">
-                        </div>
-
-                        <h3>Control Union Certified</h3>
-                        <p>
-                            Es una entidad de certificación que evalúa y certifica prácticas sostenibles en diversas industrias, como agricultura, alimentos, textiles y más. 
-                            Su enfoque abarca desde la producción responsable hasta el comercio ético, asegurando estándares ambientales y sociales, junto con trazabilidad y calidad en la cadena de suministro.
-                        </p>
-                    </section>
-
-                    <section class="col-4 col-6-medium col-12-xsmall">
-                        <div class="image-box d-flex justify-content-center align-items-center">
-                            <!-- Se carga el ícono -->
-                            <img class="img-fluid" src="{% static 'boceto/images/BPM300.png' %}" alt="img3" style="width: 60%; height: 60%;filter: drop-shadow(5px 5px 5px #0e0d0d8c);">
-                        </div>
-
-                        <h3>Buenas Practicas de Manufactura</h3>
-                        <p>
-                            Son pautas y estándares que aseguran la producción segura, consistente y de alta calidad de productos, principalmente en la industria farmacéutica y alimentaria. 
-                            Estas prácticas abarcan desde la higiene personal y el equipo de producción hasta los procesos de fabricación y control de calidad, con el objetivo de garantizar la seguridad del consumidor y la integridad del producto.
-                        </p>
-                    </section>
-
-                    <section class="col-4 col-6-medium col-12-xsmall">
-                        <!-- Se carga el ícono -->
-                        <div class="image-box d-flex justify-content-center align-items-center">
-                            <img class="img-fluid" src="{% static 'boceto/images/organica300.png' %}" alt="img4" style="width: 60%; height: 60%;filter: drop-shadow(5px 5px 5px #0e0d0d8c);">
-                        </div>
-
-                        <h3>Orgánica</h3>
-                        <p>
-                            Asegura que productos agrícolas sean cultivados sin químicos sintéticos ni OMG, promoviendo prácticas respetuosas con el ambiente y la salud. 
-                            Trazabilidad y estándares garantizan autenticidad y opciones más saludables para consumidores.
-                        </p>
-                    </section>
+            <p style="font-size: 1.1rem; color: var(--color-gray); line-height: 1.8; margin-bottom: 2rem;">
+                Gracias a su alto contenido de potasio y bajo contenido de sodio, es especialmente
+                beneficioso para personas con hipertensión arterial o enfermedades cardíacas.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 500;">
+                    <span style="color: var(--color-gold);">✓</span> Alto en Potasio
+                </div>
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 500;">
+                    <span style="color: var(--color-gold);">✓</span> Bajo en Sodio
+                </div>
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 500;">
+                    <span style="color: var(--color-gold);">✓</span> Rico en Fibra
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- contactanos -->
-<section id="five" class="wrapper style2 special fade">
-    <div class="container">
-        <header>
-            <h2 style="color: white;">Contáctanos  </h2>
-            {% if enviado_correctamente %}
-                <p style="color: white;font-size: larger;">Correo enviado correctamente. 
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#11c02e}</style><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+<!-- ============================================
+     🌍 SECCIÓN LABOR SOCIAL
+     ============================================ -->
+<section id="social" class="section"
+    style="padding: 5rem 2rem; background: linear-gradient(135deg, #1B5E20, #2E7D32); color: white;">
+    <div
+        style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; align-items: center;">
+        <!-- Texto -->
+        <div>
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2;">
+                Trabajamos por el Bienestar de Nuestra Comunidad
+            </h2>
+            <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.8; margin-bottom: 1.5rem;">
+                Realizamos actividades de reforestación de plantas nativas como parte de nuestra
+                vinculación con nuestra comunidad.
+            </p>
+            <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.8; margin-bottom: 2rem;">
+                Somos socios del programa <strong>Sembrando Vida</strong> de la Prefectura de El Oro
+                para devolver las especies nativas de árboles a nuestras tierras.
+            </p>
+            <a href="{% url 'labor' %}" class="btn btn-primary" style="display: inline-flex;">
+                Conoce Nuestra Labor
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Imagen -->
+        <div>
+            <img src="{% static 'boceto/images/pic04.jpg' %}" alt="Labor Social Oro Verde"
+                style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);" />
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     🏆 SECCIÓN CERTIFICACIONES
+     ============================================ -->
+<section id="certifications" class="section" style="padding: 5rem 2rem; background: var(--color-cream);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="section-header">
+            <h2 class="section-title">Fomentamos el Comercio Justo</h2>
+            <p class="section-subtitle">
+                Contamos con las certificaciones ORGÁNICA Y GLOBAL GAP individuales de cada uno de
+                nuestros socios para los mercados USA, Europa y Japón.
+            </p>
+        </div>
+
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <!-- Fair Trade -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s;">
+                <img src="{% static 'boceto/images/fairtrade300.png' %}" alt="Fair Trade"
+                    style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));" />
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.75rem;">Fair Trade</h3>
+                <p style="font-size: 0.9rem; color: var(--color-gray); line-height: 1.6;">
+                    Comercio justo que garantiza precios equitativos y condiciones laborales dignas.
                 </p>
-            {% else %}
-                <p style="color: white;">No nos escribas, nosotros te escribiremos</p>
-            {% endif %}
-        </header>
-        <!--aqui ve si es true el valor muestra este mensaje-->
-        <form method="post" action="{% url 'enviar_correo' %}" class="cta">
-            <div class="row gtr-uniform gtr-50">
-                {% csrf_token %}
-                <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email"
-                        placeholder="Escribe tu correo electrónico" required /></div>
-                <div class="col-4 col-12-xsmall"><input type="submit" value="Enviar" class="fit primary" />
-                </div>
             </div>
+
+            <!-- Global Gap -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s;">
+                <img src="{% static 'boceto/images/global300.png' %}" alt="Global Gap"
+                    style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));" />
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.75rem;">Global Gap</h3>
+                <p style="font-size: 0.9rem; color: var(--color-gray); line-height: 1.6;">
+                    Estándares para producción segura y sostenible de alimentos a nivel mundial.
+                </p>
+            </div>
+
+            <!-- Control Union -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s;">
+                <img src="{% static 'boceto/images/control300.png' %}" alt="Control Union"
+                    style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));" />
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.75rem;">Control Union</h3>
+                <p style="font-size: 0.9rem; color: var(--color-gray); line-height: 1.6;">
+                    Certificación que evalúa prácticas sostenibles en producción y comercio.
+                </p>
+            </div>
+
+            <!-- BPM -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s;">
+                <img src="{% static 'boceto/images/BPM300.png' %}" alt="BPM"
+                    style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));" />
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.75rem;">BPM</h3>
+                <p style="font-size: 0.9rem; color: var(--color-gray); line-height: 1.6;">
+                    Buenas Prácticas de Manufactura para seguridad e integridad del producto.
+                </p>
+            </div>
+
+            <!-- Orgánica -->
+            <div
+                style="background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s;">
+                <img src="{% static 'boceto/images/organica300.png' %}" alt="Orgánica"
+                    style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));" />
+                <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.75rem;">Orgánica</h3>
+                <p style="font-size: 0.9rem; color: var(--color-gray); line-height: 1.6;">
+                    Producción sin químicos sintéticos, respetuosa con el ambiente y la salud.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     📧 SECCIÓN CONTACTO
+     ============================================ -->
+<section id="contact" class="section"
+    style="padding: 5rem 2rem; background: linear-gradient(135deg, #0D3D14, #1B5E20); color: white; text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+        <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">
+            Contáctanos
+        </h2>
+
+        {% if enviado_correctamente %}
+        <div
+            style="background: rgba(76, 175, 80, 0.3); border: 1px solid var(--color-accent); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+            <p style="font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                ✅ Correo enviado correctamente. ¡Pronto te contactaremos!
+            </p>
+        </div>
+        {% elif error_mensaje %}
+        <div
+            style="background: rgba(244, 67, 54, 0.3); border: 1px solid #f44336; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+            <p style="font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                ⚠️ {{ error_mensaje }}
+            </p>
+        </div>
+        {% else %}
+        <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem;">
+            ¿Interesado en nuestro banano orgánico? Déjanos tu correo y te contactaremos.
+        </p>
+        {% endif %}
+
+        <form method="post" action="{% url 'enviar_correo' %}"
+            style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            {% csrf_token %}
+            <input type="email" name="email" id="email" placeholder="Escribe tu correo electrónico" required
+                style="flex: 1; min-width: 280px; padding: 1rem 1.5rem; border: none; border-radius: 50px; font-size: 1rem; background: rgba(255,255,255,0.95); color: var(--color-black);" />
+            <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer;">
+                Enviar
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </svg>
+            </button>
         </form>
+
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+            🔒 Tu información está segura con nosotros. No compartimos tus datos.
+        </p>
     </div>
 </section>
 
