@@ -1,32 +1,123 @@
-<!-- Se hereda el contenido del archivo base.html-->
 {% extends "boceto/base.html" %}
-
-<!-- Se carga la carpeta static -->
 {% load static %}
 
-<!-- Empieza el contenido de esta página-->
+{% block title %}{{ noticia.titulo }}{% endblock %}
+
 {% block content %}
 
-    <div id="main" class="wrapper style1">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="color: #333; font-family: 'Arial', sans-serif; margin-bottom: 10px;">{{ noticia.titulo }}</h2>
-            <p style="color: #666; font-family: 'Arial', sans-serif; margin-bottom: 5px;" class="news-date">
-                Fecha: <span class="date">{{ noticia.created }}</span>
-            </p>
+<!-- ============================================
+     📰 HERO NOTICIA
+     ============================================ -->
+<section
+    style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); padding: calc(var(--spacing-xxl) + 80px) var(--spacing-xl) var(--spacing-xl); color: white;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <!-- Breadcrumb -->
+        <nav style="margin-bottom: 1.5rem;">
+            <a href="{% url 'index' %}" style="color: rgba(255,255,255,0.7); text-decoration: none;">Inicio</a>
+            <span style="margin: 0 0.5rem; opacity: 0.5;">›</span>
+            <a href="{% url 'noticias' %}" style="color: rgba(255,255,255,0.7); text-decoration: none;">Noticias</a>
+            <span style="margin: 0 0.5rem; opacity: 0.5;">›</span>
+            <span style="color: white;">Artículo</span>
+        </nav>
 
-            <div style="display: flex; justify-content: center; align-items: center; max-height: 300px; overflow: hidden; border-radius: 5px;">
-                <img src="{% if noticia.imagen %}{{ noticia.imagen.url }}{% else %}{% static 'boceto/images/pic01.png' %}{% endif %}" alt="Imagen de la Noticia" style="width: 100%; height: auto; object-fit: cover;">
+        <!-- Fecha -->
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <span
+                style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem;">
+                📅 {{ noticia.created|date:"d M, Y" }}
+            </span>
+            <span
+                style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem;">
+                ✍️ {{ noticia.autor }}
+            </span>
+        </div>
+
+        <!-- Título -->
+        <h1 style="font-family: var(--font-heading); font-size: 2.25rem; line-height: 1.3; margin: 0;">
+            {{ noticia.titulo }}
+        </h1>
+    </div>
+</section>
+
+<!-- ============================================
+     📝 CONTENIDO DEL ARTÍCULO
+     ============================================ -->
+<section style="padding: 4rem 2rem; background: var(--color-cream);">
+    <div style="max-width: 800px; margin: 0 auto;">
+
+        <!-- Imagen principal -->
+        <div style="margin: -6rem auto 2rem; position: relative;">
+            <img src="{% if noticia.imagen %}{{ noticia.imagen.url }}{% else %}{% static 'boceto/images/pic01.png' %}{% endif %}"
+                alt="{{ noticia.titulo }}"
+                style="width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2);" />
+        </div>
+
+        <!-- Contenido del artículo -->
+        <article
+            style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+            <div style="color: var(--color-gray-dark); font-size: 1.1rem; line-height: 1.9;">
+                {{ noticia.contenido|linebreaks }}
             </div>
 
-            <div style="color: #444; font-family: 'Arial', sans-serif; text-align: justify; margin-top: 15px;">
-                {{ noticia.contenido }}
-            </div>
+            <!-- Separador -->
+            <hr style="border: none; height: 1px; background: #eee; margin: 2rem 0;" />
 
-            <div style="font-size: 0.9em; margin-top: 20px; color: #888;" class="news-author">
-                Autor: {{ noticia.autor }}
+            <!-- Información del autor -->
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div
+                    style="width: 50px; height: 50px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem;">
+                    {{ noticia.autor.username|slice:":1"|upper }}
+                </div>
+                <div>
+                    <h4 style="color: var(--color-primary); margin: 0; font-size: 1rem;">{{ noticia.autor }}</h4>
+                    <p style="color: var(--color-gray); margin: 0; font-size: 0.85rem;">
+                        Publicado el {{ noticia.created|date:"d \d\e F \d\e Y" }}
+                    </p>
+                </div>
             </div>
+        </article>
 
-            <a href="{% url 'noticias' %}" style="display: inline-block; margin-top: 20px;  font-weight: bold; text-decoration: none;">Volver a la lista de noticias</a>
+        <!-- Acciones -->
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; flex-wrap: wrap; gap: 1rem;">
+            <a href="{% url 'noticias' %}"
+                style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 600; text-decoration: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                </svg>
+                Volver a Noticias
+            </a>
+
+            <div style="display: flex; gap: 0.5rem;">
+                <span style="color: var(--color-gray); font-size: 0.9rem;">Compartir:</span>
+                <a href="https://wa.me/?text={{ noticia.titulo }}" target="_blank"
+                    style="width: 36px; height: 36px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
+</section>
+
+<!-- ============================================
+     📰 OTRAS NOTICIAS
+     ============================================ -->
+<section style="padding: 4rem 2rem; background: white; text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+        <h2
+            style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--color-primary); margin-bottom: 1rem;">
+            ¿Te gustó esta noticia?
+        </h2>
+        <p style="color: var(--color-gray); margin-bottom: 1.5rem;">
+            Explora más artículos sobre nuestra cooperativa, proyectos y logros.
+        </p>
+        <a href="{% url 'noticias' %}" class="btn btn-primary">
+            Ver Todas las Noticias
+        </a>
+    </div>
+</section>
+
 {% endblock %}
