@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    # Páginas principales
     path("", views.home, name="index"),
     path("base/", views.base, name="base"),
     path("Nosotros/", views.nosotros, name="nosotros"),
@@ -12,14 +13,16 @@ urlpatterns = [
     path("Labor_social/", views.labor, name="labor"),
     path("Bana_Pan/", views.banapan, name="banapan"),
     path("Cooporoverdesa/", views.cooporoverdesa, name="cooporoverdesa"),
+    
+    # Contacto y Cotización
     path("enviado/", views.enviar_correo, name="enviar_correo"),
+    path("cotizacion/", views.cotizacion, name="cotizacion"),
+    path("cotizacion/enviar/", views.enviar_cotizacion, name="enviar_cotizacion"),
+    
+    # Noticias
     path("noticias/", views.noticias, name="noticias"),
-    # esta url recibira la id de la noticia seleccionada y mediante esto nos mostrara la info completa de esa noticia
     path("noticia/<int:noticia_id>/", views.ver_noticia, name="ver_noticia"),
 ]
 
-"""urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) es una configuración necesaria para 
-que Django pueda servir archivos de medios durante el desarrollo de tu aplicación. 
-Permite acceder y mostrar los archivos multimedia cargados por los usuarios a través de sus respectivas URL.en fin nos sirve para 
-cargar imagenes en noticias"""
+# Servir archivos multimedia en desarrollo
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

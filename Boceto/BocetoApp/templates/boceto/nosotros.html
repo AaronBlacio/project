@@ -1,40 +1,231 @@
-<!-- Se hereda el contenido del archivo base.html-->
 {% extends "boceto/base.html" %}
-
-<!-- Se carga la carpeta static -->
 {% load static %}
 
-<!-- Empieza el contenido de esta página-->
+{% block title %}Nosotros{% endblock %}
+
 {% block content %}
 
-    <!-- Main -->
-    <div id="main" class="wrapper style1">
-        <div class="container">
-            <header class="major">
-                <h2>Quienes somos</h2>
-                <p>Somos una organización de pequeños productores de banano asentada en la zona sur de Ecuador. 
-                    El cultivo del banano es la principal fuente de ingresos de nuestros socios</p>
-            </header>
+<!-- ============================================
+     🏢 HERO NOSOTROS
+     ============================================ -->
+<section
+    style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); padding: calc(var(--spacing-xxl) + 80px) var(--spacing-xl) var(--spacing-xl); color: white; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <span
+            style="display: inline-block; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem;">
+            🏢 SOBRE NOSOTROS
+        </span>
+        <h1 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">
+            Cooperativa Agrícola Oro Verde
+        </h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+            Produciendo banano orgánico de calidad premium con valores de comercio justo
+            desde el corazón de Ecuador para el mundo.
+        </p>
+    </div>
+</section>
 
-            <!-- Contenido -->
-                <section id="content">
-                    <a href="#" class="image fit"><img src="{% static 'boceto/images/socios-1024x581.jpeg' %}" alt="" /></a>
-                    <h3>FUNDACIÓN: 11 DE SEP. DEL 2017</h3>
-                    <p>FUNDADA POR 12 SOCIOS Y ACTUALMENTE SOMOS 25 SOCIOS PRODUCTORES DE BANANO DE LOS CUALES SON 14 ORGÁNICOS Y 11 CONVENCIONALES.</p>
-                    <p>Nuestra fruta es comercializada en varios países europeos tales como Alemania, Italia, Francia y contamos con Certificación Fair Trade, Orgánica, Global Gap, Y buenas Practicas de manufactura.</p>
-                </section>
-            
-                <!-- Misión -->
-                <header class="major">
-                    <h2>Misión</h2>
-                    <p>Buscamos satisfacer las necesidades de los socios y socias a través de mejores labores culturales apuntando a mejorar la productividad, mejores alternativas de mercado en lo referente a la comercialización. Brindamos una atención esmerada y oportuna con responsabilidad en el cumplimiento de compromisos adquiridos. Ofrecemos a nuestros empleados y empleadas un ambiente laboral estable con perspectivas de crecimiento y desarrollo personal. Asumimos el compromiso de promover de que cada una de nuestras actividades genere un impacto positivo y protejamos el medio ambiente.</p>
-                </header>
+<!-- ============================================
+     📖 NUESTRA HISTORIA
+     ============================================ -->
+<section style="padding: 5rem 2rem; background: var(--color-cream);">
+    <div
+        style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; align-items: center;">
 
-                <!-- Visión -->
-                <header class="major">
-                    <h2>Visión</h2>
-                    <p>Nuestra cooperativa es auto-sostenible de pequeños productores y productoras agrícolas, en la que piensen los compradores cuando necesiten nuestros productos que son entregados con calidad y responsabilidad socialización agrícola sostenible de pequeños productores y productoras, pero con un enfoque empresarial que presta servicios de producción y comercialización, ofertando productos de calidad.</p>
-                </header>
+        <!-- Imagen -->
+        <div style="position: relative;">
+            <img src="{% static 'boceto/images/pic02.jpg' %}" alt="Campos de banano Oro Verde"
+                style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);" />
+            <div
+                style="position: absolute; bottom: -20px; left: -20px; background: var(--color-primary); color: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(27, 94, 32, 0.3);">
+                <span style="font-size: 2.5rem; font-weight: 700;">2017</span>
+                <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Año de fundación</p>
+            </div>
+        </div>
+
+        <!-- Contenido -->
+        <div>
+            <span
+                style="display: inline-block; background: rgba(27, 94, 32, 0.1); color: var(--color-primary); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">
+                NUESTRA HISTORIA
+            </span>
+            <h2
+                style="font-family: var(--font-heading); font-size: 2.25rem; color: var(--color-primary); margin-bottom: 1.5rem; line-height: 1.2;">
+                De 12 Socios a una Familia de 25 Productores
+            </h2>
+            <p style="font-size: 1.05rem; color: var(--color-gray-dark); line-height: 1.8; margin-bottom: 1.5rem;">
+                La <strong>Cooperativa Agrícola Oro Verde</strong> fue fundada el 11 de septiembre de 2017
+                por 12 socios visionarios en la zona sur de Ecuador. Lo que comenzó como un sueño de
+                pequeños productores, hoy se ha convertido en una organización reconocida internacionalmente.
+            </p>
+            <p style="font-size: 1.05rem; color: var(--color-gray-dark); line-height: 1.8; margin-bottom: 1.5rem;">
+                En la actualidad, contamos con <strong>25 socios dedicados</strong> a la producción de banano,
+                de los cuales 14 son productores orgánicos certificados y 11 siguen métodos convencionales
+                en proceso de transición hacia lo orgánico.
+            </p>
+
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <span
+                        style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-primary); font-weight: 700;">25</span>
+                    <p style="color: var(--color-gray); margin: 0; font-size: 0.9rem;">Socios Activos</p>
+                </div>
+                <div style="text-align: center;">
+                    <span
+                        style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-primary); font-weight: 700;">14</span>
+                    <p style="color: var(--color-gray); margin: 0; font-size: 0.9rem;">Orgánicos Certificados</p>
+                </div>
+                <div style="text-align: center;">
+                    <span
+                        style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-primary); font-weight: 700;">3</span>
+                    <p style="color: var(--color-gray); margin: 0; font-size: 0.9rem;">Países Europeos</p>
+                </div>
+            </div>
         </div>
     </div>
+</section>
+
+<!-- ============================================
+     🎯 MISIÓN, VISIÓN Y VALORES
+     ============================================ -->
+<section style="padding: 5rem 2rem; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-family: var(--font-heading); font-size: 2.25rem; color: var(--color-primary);">
+                Nuestros Pilares
+            </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Misión -->
+            <div
+                style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9); padding: 2.5rem; border-radius: 16px; text-align: center;">
+                <div
+                    style="width: 70px; height: 70px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">
+                    🎯
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-primary); margin-bottom: 1rem;">
+                    Nuestra Misión
+                </h3>
+                <p style="color: var(--color-gray-dark); line-height: 1.7;">
+                    Producir banano orgánico de la más alta calidad, promoviendo prácticas
+                    agrícolas sostenibles que beneficien a nuestros socios, comunidades y
+                    el medio ambiente.
+                </p>
+            </div>
+
+            <!-- Visión -->
+            <div
+                style="background: linear-gradient(135deg, #FFF8E1, #FFECB3); padding: 2.5rem; border-radius: 16px; text-align: center;">
+                <div
+                    style="width: 70px; height: 70px; background: var(--color-bronze); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">
+                    🌟
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-bronze); margin-bottom: 1rem;">
+                    Nuestra Visión
+                </h3>
+                <p style="color: var(--color-gray-dark); line-height: 1.7;">
+                    Ser reconocidos como la cooperativa líder en exportación de banano
+                    orgánico de Ecuador, expandiendo nuestra presencia a nuevos mercados
+                    internacionales.
+                </p>
+            </div>
+
+            <!-- Valores -->
+            <div
+                style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB); padding: 2.5rem; border-radius: 16px; text-align: center;">
+                <div
+                    style="width: 70px; height: 70px; background: #1976D2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">
+                    💎
+                </div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: #1976D2; margin-bottom: 1rem;">
+                    Nuestros Valores
+                </h3>
+                <p style="color: var(--color-gray-dark); line-height: 1.7;">
+                    Comercio justo, sostenibilidad ambiental, calidad premium,
+                    transparencia, trabajo en equipo y compromiso con nuestras
+                    comunidades locales.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     🌍 EXPORTACIÓN INTERNACIONAL
+     ============================================ -->
+<section
+    style="padding: 5rem 2rem; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-family: var(--font-heading); font-size: 2.25rem; margin-bottom: 1rem;">
+                Exportamos a Europa
+            </h2>
+            <p style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                Nuestro banano orgánico premium llega a los mercados más exigentes de Europa,
+                cumpliendo con los más altos estándares de calidad.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
+            <!-- Alemania -->
+            <div
+                style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                <span style="font-size: 3rem;">🇩🇪</span>
+                <h4 style="margin: 1rem 0 0.5rem; font-size: 1.2rem;">Alemania</h4>
+                <p style="opacity: 0.8; font-size: 0.9rem; margin: 0;">Principal mercado</p>
+            </div>
+
+            <!-- Italia -->
+            <div
+                style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                <span style="font-size: 3rem;">🇮🇹</span>
+                <h4 style="margin: 1rem 0 0.5rem; font-size: 1.2rem;">Italia</h4>
+                <p style="opacity: 0.8; font-size: 0.9rem; margin: 0;">Mercado en crecimiento</p>
+            </div>
+
+            <!-- Francia -->
+            <div
+                style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                <span style="font-size: 3rem;">🇫🇷</span>
+                <h4 style="margin: 1rem 0 0.5rem; font-size: 1.2rem;">Francia</h4>
+                <p style="opacity: 0.8; font-size: 0.9rem; margin: 0;">Mercado premium</p>
+            </div>
+
+            <!-- Más países -->
+            <div
+                style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                <span style="font-size: 3rem;">🌍</span>
+                <h4 style="margin: 1rem 0 0.5rem; font-size: 1.2rem;">Y más...</h4>
+                <p style="opacity: 0.8; font-size: 0.9rem; margin: 0;">Expansión continua</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     📞 LLAMADO A LA ACCIÓN
+     ============================================ -->
+<section style="padding: 5rem 2rem; background: var(--color-cream); text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+        <h2
+            style="font-family: var(--font-heading); font-size: 2rem; color: var(--color-primary); margin-bottom: 1rem;">
+            ¿Quieres ser parte de nuestra historia?
+        </h2>
+        <p style="color: var(--color-gray); font-size: 1.1rem; margin-bottom: 2rem;">
+            Ya sea como cliente, socio o colaborador, estamos abiertos a nuevas oportunidades.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="{% url 'cotizacion' %}" class="btn btn-primary">
+                Solicitar Cotización
+            </a>
+            <a href="{% url 'index' %}#contact" class="btn btn-outline">
+                Contactarnos
+            </a>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
