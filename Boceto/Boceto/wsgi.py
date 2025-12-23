@@ -2,37 +2,25 @@
 # 🚀 WSGI Configuration for PythonAnywhere
 # ============================================
 # This file contains the WSGI configuration required to serve your Django webapp.
-# It works by setting the variable 'application' to a WSGI handler of some description.
-#
-# For PythonAnywhere, update the path to your project in the Web tab.
 
 import os
 import sys
 from pathlib import Path
-from dotenv import load_dotenv
 
 # ============================================
 # 📂 PROJECT PATHS
 # ============================================
-# Add your project directory to the sys.path
-# IMPORTANT: Change 'yourusername' to your PythonAnywhere username
+# IMPORTANT: Change 'xtaxx24' to your PythonAnywhere username
+project_home = '/home/xtaxx24/project/Boceto'
 
-# For local development (Windows paths will be different)
-project_home = Path(__file__).resolve().parent
-
-# For PythonAnywhere, use:
-# project_home = '/home/yourusername/project/Boceto'
-
-if str(project_home) not in sys.path:
-    sys.path.insert(0, str(project_home))
+if project_home not in sys.path:
+    sys.path.insert(0, project_home)
 
 # ============================================
-# 🔐 ENVIRONMENT VARIABLES
+# 🔐 ENVIRONMENT VARIABLES (using decouple)
 # ============================================
-# Load environment variables from .env file
-env_path = project_home / '.env'
-if env_path.exists():
-    load_dotenv(env_path)
+# python-decouple will automatically load from .env file in the project directory
+# No need for python-dotenv
 
 # ============================================
 # 🎯 DJANGO CONFIGURATION
