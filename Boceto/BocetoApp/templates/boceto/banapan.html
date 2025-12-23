@@ -1,64 +1,356 @@
-<!-- Se hereda el contenido del archivo base.html-->
 {% extends "boceto/base.html" %}
-
-<!-- Se carga la carpeta static -->
 {% load static %}
 
-<!-- Empieza el contenido de esta página-->
+{% block title %}Bana Pan - Derivados de Banano{% endblock %}
+
 {% block content %}
 
-    <!-- Main -->
-    <div id="main" class="wrapper style1">
-        <div class="container">
-            <header class="major">
-                <h2>PROYECTO DE BENEFICIO SOCIAL</h2>
-                <p>Dirigido a esposas e hijas de socias, esposas e hijas de trabajdores agricolas de cada una de nuestras fincas 
-                y a jóvenes emprendedores relacionados a nuestra organización.
-                Somos 25 socios, 295 trabajadores directos y 700 personas beneficiadas con el objetivo de mejorar las condiciones de vida de quienes colaboran con nuestra Cooperativa Oro Verde.</p>
-            </header>
-            <div class="row gtr-150">
-                <div class="col-8 col-12-medium">
+<!-- ============================================
+     🍞 HERO BANA PAN
+     ============================================ -->
+<section
+    style="background: linear-gradient(135deg, #FF8F00, #F57C00); padding: calc(var(--spacing-xxl) + 80px) var(--spacing-xl) var(--spacing-xl); color: white; text-align: center;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <span
+            style="display: inline-block; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem;">
+            🍞 EMPRENDIMIENTO SOCIAL
+        </span>
+        <h1 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">
+            Bana Pan
+        </h1>
+        <p style="font-size: 1.3rem; opacity: 0.95; max-width: 700px; margin: 0 auto; font-weight: 500;">
+            Derivados de Banano Orgánico
+        </p>
+        <p style="font-size: 1.1rem; opacity: 0.85; max-width: 700px; margin: 1rem auto 0;">
+            Proyecto de beneficio social que transforma nuestro banano orgánico
+            en deliciosos productos artesanales.
+        </p>
+    </div>
+</section>
 
-                    <!-- Content -->
-                        <section id="content">
-                            <a href="#" class="image fit"><img src="{% static 'boceto/images/BanaPan.jpeg' %}" alt="" /></a>
-                            <h3>PRODUCCION DE NUESTRA HARINA DE BANANO ORGANICO</h3>
-                            <p>En el mercado local es muy difícil conseguir harina de banano, por lo tanto produciremos nuestra propia harina de banano orgánico por lo que tenemos que conseguir un Deshidratador y un Molino Industrial pulverizador.</p>
-                            <header class="major">
-                                <h2>PUNTO DE VENTAS</h2>
-                            </header>
-                            <p>Estará ubicado en la via la ferroviaria en un sector muy comercial en la que funcionará nuestra Panaderia – Pastelería.</p>
-                            <p>Contará con tres personas operarias y adicionalmente tanto para la logística y control estaremos el personal administrativo de la cooperativa.</p>
-                            <p>Se realizará la adquisición de los equipos necesarios para su funcionamiento como son Horno, batidora, mezcladora, mesas e implementos, etc (industriales)</p>
-                        </section>
+<!-- ============================================
+     🌟 IMPACTO SOCIAL
+     ============================================ -->
+<section style="padding: 5rem 2rem; background: var(--color-cream);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem; align-items: center;">
+
+            <!-- Imagen Banner Bana Pan -->
+            <div style="position: relative;">
+                <img src="{% static 'boceto/images/BanaPan.jpeg' %}" alt="Bana Pan - Derivados de Banano Orgánico"
+                    style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);" />
+                <div
+                    style="position: absolute; top: -15px; right: -15px; background: #FF8F00; color: white; padding: 1rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(255, 143, 0, 0.3);">
+                    <span style="font-size: 1.5rem; font-weight: 700; display: block;">700+</span>
+                    <span style="font-size: 0.75rem;">Beneficiados</span>
                 </div>
-                <div class="col-4 col-12-medium">
+            </div>
 
-                    <!-- Sidebar -->
-                        <section id="sidebar">
-                            <section>
-                                <h3>BANA CUPCAKES - MUFFINS</h3>
-                                <a href="#" class="image fit" style="max-width: 200px;"><img src="{% static 'boceto/images/MUFFINS.jpeg' %}" alt="" /></a>
-                            </section>
-                                            
-                            <section>
-                                <h3>BANA - CAKES</h3>
-                                <a href="#" class="image fit" style="max-width: 200px;"><img src="{% static 'boceto/images/CAKES.png' %}" alt="" /></a>
-                            </section>
-                                            
-                            <section>
-                                <h3>BANA - GALLETAS</h3>
-                                <a href="#" class="image fit" style="max-width: 200px;"><img src="{% static 'boceto/images/GALLETAS.png' %}" alt="" /></a>
-                            </section>
-                                                
-                            <section>
-                                <h3>BANA - PUDIN</h3>
-                                <a href="#" class="image fit" style="max-width: 200px;"><img src="{% static 'boceto/images/PUDIN.png' %}" alt="" /></a>
-                            </section>
-                        </section>
+            <!-- Contenido -->
+            <div>
+                <span
+                    style="display: inline-block; background: rgba(255, 143, 0, 0.1); color: #E65100; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">
+                    🎯 PROYECTO DE BENEFICIO SOCIAL
+                </span>
+                <h2
+                    style="font-family: var(--font-heading); font-size: 2rem; color: var(--color-primary); margin-bottom: 1.5rem; line-height: 1.3;">
+                    Transformando Vidas a Través del Emprendimiento
+                </h2>
+                <p style="color: var(--color-gray-dark); line-height: 1.8; margin-bottom: 1rem; font-size: 1.05rem;">
+                    Dirigido a <strong>esposas e hijas de socios</strong>, trabajadores agrícolas de nuestras
+                    fincas y jóvenes emprendedores relacionados a nuestra organización.
+                </p>
+                <p style="color: var(--color-gray-dark); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Con <strong>25 socios</strong> y <strong>295 trabajadores directos</strong>,
+                    impactamos positivamente a más de 700 personas, mejorando sus condiciones
+                    de vida a través del comercio justo.
+                </p>
+
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <div style="text-align: center;">
+                        <span
+                            style="font-family: var(--font-heading); font-size: 2rem; color: #FF8F00; font-weight: 700;">25</span>
+                        <p style="color: var(--color-gray); margin: 0; font-size: 0.85rem;">Socios</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <span
+                            style="font-family: var(--font-heading); font-size: 2rem; color: #FF8F00; font-weight: 700;">295</span>
+                        <p style="color: var(--color-gray); margin: 0; font-size: 0.85rem;">Trabajadores</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <span
+                            style="font-family: var(--font-heading); font-size: 2rem; color: #FF8F00; font-weight: 700;">700+</span>
+                        <p style="color: var(--color-gray); margin: 0; font-size: 0.85rem;">Beneficiados</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
+
+<!-- ============================================
+     🥣 HARINA DE BANANO
+     ============================================ -->
+<section style="padding: 5rem 2rem; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span
+                style="display: inline-block; background: rgba(27, 94, 32, 0.1); color: var(--color-primary); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">
+                🌾 PRODUCCIÓN LOCAL
+            </span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.25rem; color: var(--color-primary);">
+                Nuestra Harina de Banano Orgánico
+            </h2>
+            <p style="color: var(--color-gray); max-width: 600px; margin: 1rem auto 0;">
+                En el mercado local es muy difícil conseguir harina de banano,
+                por eso producimos nuestra propia harina orgánica de alta calidad.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <!-- Proceso 1 -->
+            <div style="background: var(--color-cream); padding: 2rem; border-radius: 16px; text-align: center;">
+                <div
+                    style="width: 70px; height: 70px; background: linear-gradient(135deg, #FFB300, #FF8F00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">
+                    🍌
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.75rem;">
+                    1. Selección
+                </h3>
+                <p style="color: var(--color-gray); line-height: 1.7; font-size: 0.95rem;">
+                    Seleccionamos los mejores bananos orgánicos de nuestras fincas certificadas.
+                </p>
+            </div>
+
+            <!-- Proceso 2 -->
+            <div style="background: var(--color-cream); padding: 2rem; border-radius: 16px; text-align: center;">
+                <div
+                    style="width: 70px; height: 70px; background: linear-gradient(135deg, #FFB300, #FF8F00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">
+                    ☀️
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.75rem;">
+                    2. Deshidratación
+                </h3>
+                <p style="color: var(--color-gray); line-height: 1.7; font-size: 0.95rem;">
+                    Utilizamos un deshidratador industrial para preservar los nutrientes naturales.
+                </p>
+            </div>
+
+            <!-- Proceso 3 -->
+            <div style="background: var(--color-cream); padding: 2rem; border-radius: 16px; text-align: center;">
+                <div
+                    style="width: 70px; height: 70px; background: linear-gradient(135deg, #FFB300, #FF8F00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">
+                    ⚙️
+                </div>
+                <h3
+                    style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--color-primary); margin-bottom: 0.75rem;">
+                    3. Molienda
+                </h3>
+                <p style="color: var(--color-gray); line-height: 1.7; font-size: 0.95rem;">
+                    Nuestro molino industrial pulverizador crea una harina fina y de calidad.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     🧁 PRODUCTOS BANA PAN
+     ============================================ -->
+<section style="padding: 5rem 2rem; background: linear-gradient(135deg, #FFF8E1, #FFECB3);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span
+                style="display: inline-block; background: rgba(255, 143, 0, 0.2); color: #E65100; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">
+                🧁 NUESTROS PRODUCTOS
+            </span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.25rem; color: var(--color-primary);">
+                Deliciosos Derivados de Banano
+            </h2>
+            <p style="color: var(--color-gray); max-width: 600px; margin: 1rem auto 0;">
+                Elaborados artesanalmente con nuestra harina de banano orgánico,
+                cada producto es una muestra de calidad y sabor ecuatoriano.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <!-- Muffins -->
+            <div
+                style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <div style="height: 200px; overflow: hidden;">
+                    <img src="{% static 'boceto/images/MUFFINS.jpeg' %}" alt="Bana Cupcakes - Muffins"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" />
+                </div>
+                <div style="padding: 1.5rem;">
+                    <span
+                        style="display: inline-block; background: #FFF3E0; color: #E65100; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem;">
+                        ⭐ Más Vendido
+                    </span>
+                    <h3
+                        style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-primary); margin-bottom: 0.5rem;">
+                        Bana Cupcakes & Muffins
+                    </h3>
+                    <p style="color: var(--color-gray); font-size: 0.9rem; line-height: 1.6;">
+                        Deliciosos cupcakes y muffins esponjosos hechos con harina de banano orgánico.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cakes -->
+            <div
+                style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <div style="height: 200px; overflow: hidden;">
+                    <img src="{% static 'boceto/images/CAKES.png' %}" alt="Bana Cakes"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" />
+                </div>
+                <div style="padding: 1.5rem;">
+                    <span
+                        style="display: inline-block; background: #E8F5E9; color: #2E7D32; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem;">
+                        🎂 Especial
+                    </span>
+                    <h3
+                        style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-primary); margin-bottom: 0.5rem;">
+                        Bana Cakes
+                    </h3>
+                    <p style="color: var(--color-gray); font-size: 0.9rem; line-height: 1.6;">
+                        Tortas y pasteles artesanales perfectos para cualquier celebración especial.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Galletas -->
+            <div
+                style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <div style="height: 200px; overflow: hidden;">
+                    <img src="{% static 'boceto/images/GALLETAS.png' %}" alt="Bana Galletas"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" />
+                </div>
+                <div style="padding: 1.5rem;">
+                    <span
+                        style="display: inline-block; background: #FCE4EC; color: #C2185B; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem;">
+                        🍪 Artesanal
+                    </span>
+                    <h3
+                        style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-primary); margin-bottom: 0.5rem;">
+                        Bana Galletas
+                    </h3>
+                    <p style="color: var(--color-gray); font-size: 0.9rem; line-height: 1.6;">
+                        Galletas crujientes y nutritivas, perfectas para el snack del día.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pudín -->
+            <div
+                style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+                <div style="height: 200px; overflow: hidden;">
+                    <img src="{% static 'boceto/images/PUDIN.png' %}" alt="Bana Pudín"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" />
+                </div>
+                <div style="padding: 1.5rem;">
+                    <span
+                        style="display: inline-block; background: #F3E5F5; color: #7B1FA2; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem;">
+                        🍮 Cremoso
+                    </span>
+                    <h3
+                        style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-primary); margin-bottom: 0.5rem;">
+                        Bana Pudín
+                    </h3>
+                    <p style="color: var(--color-gray); font-size: 0.9rem; line-height: 1.6;">
+                        Suave y cremoso pudín de banano, un postre irresistible para toda la familia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     🏪 PUNTO DE VENTAS
+     ============================================ -->
+<section style="padding: 5rem 2rem; background: var(--color-primary); color: white;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem; align-items: center;">
+
+            <!-- Contenido -->
+            <div>
+                <span
+                    style="display: inline-block; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem;">
+                    🏪 PUNTO DE VENTAS
+                </span>
+                <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1.5rem; line-height: 1.3;">
+                    Nuestra Panadería - Pastelería
+                </h2>
+                <p style="opacity: 0.9; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Ubicada en la <strong>Vía La Ferroviaria</strong>, en un sector comercial estratégico
+                    donde podrás disfrutar de todos nuestros productos frescos recién horneados.
+                </p>
+
+                <div
+                    style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 1rem;">👥 Nuestro Equipo</h4>
+                    <p style="opacity: 0.9; font-size: 0.95rem; margin: 0;">
+                        Contamos con <strong>3 personas operarias</strong> especializadas,
+                        más el apoyo del personal administrativo de la cooperativa para
+                        logística y control de calidad.
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 12px;">
+                    <h4 style="margin-bottom: 1rem;">🔧 Equipamiento Industrial</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; opacity: 0.9; font-size: 0.95rem;">
+                        <li style="margin-bottom: 0.5rem;">✓ Horno industrial profesional</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Batidora y mezcladora industrial</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Mesas de trabajo en acero inoxidable</li>
+                        <li style="margin-bottom: 0;">✓ Implementos de pastelería profesional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mapa/Ubicación visual -->
+            <div style="text-align: center;">
+                <div
+                    style="background: rgba(255,255,255,0.1); border: 2px dashed rgba(255,255,255,0.3); border-radius: 20px; padding: 3rem 2rem;">
+                    <span style="font-size: 4rem; display: block; margin-bottom: 1rem;">📍</span>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Vía La Ferroviaria</h3>
+                    <p style="opacity: 0.8; margin-bottom: 1.5rem;">Sector Comercial - Ecuador</p>
+                    <a href="https://wa.me/593991234567?text=Hola%2C%20quiero%20información%20sobre%20los%20productos%20Bana%20Pan"
+                        target="_blank"
+                        style="display: inline-block; background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s;">
+                        📱 Consultar Disponibilidad
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================
+     📞 CALL TO ACTION
+     ============================================ -->
+<section style="padding: 5rem 2rem; background: var(--color-cream); text-align: center;">
+    <div style="max-width: 700px; margin: 0 auto;">
+        <h2
+            style="font-family: var(--font-heading); font-size: 2rem; color: var(--color-primary); margin-bottom: 1rem;">
+            ¿Quieres Probar Nuestros Productos?
+        </h2>
+        <p style="color: var(--color-gray); font-size: 1.1rem; margin-bottom: 2rem;">
+            Visítanos en nuestro punto de venta o contáctanos para pedidos especiales.
+            También realizamos entregas para eventos y celebraciones.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="{% url 'index' %}#contact" class="btn btn-primary">
+                Contáctanos
+            </a>
+            <a href="{% url 'labor' %}" class="btn btn-outline">
+                Ver Labor Social
+            </a>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
