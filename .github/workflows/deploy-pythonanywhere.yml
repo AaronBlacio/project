@@ -1,0 +1,81 @@
+# ============================================
+# 🚀 GitHub Actions Workflow
+# Deploy to PythonAnywhere on Push
+# ============================================
+
+name: Deploy to PythonAnywhere
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # ============================================
+      # 📥 CHECKOUT CODE
+      # ============================================
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      # ============================================
+      # 🚀 DEPLOY TO PYTHONANYWHERE
+      # ============================================
+      - name: Deploy to PythonAnywhere
+        env:
+          PA_API_TOKEN: ${{ secrets.PYTHONANYWHERE_API_TOKEN }}
+          PA_USERNAME: ${{ secrets.PYTHONANYWHERE_USERNAME }}
+          PA_DOMAIN: ${{ secrets.PYTHONANYWHERE_DOMAIN }}
+        run: |
+          # ============================================
+          # 📡 Pull latest code on PythonAnywhere
+          # ============================================
+          echo "🔄 Triggering git pull on PythonAnywhere..."
+          
+          curl -X POST \
+            -H "Authorization: Token ${PA_API_TOKEN}" \
+            "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/consoles/" \
+            -d "executable=bash&arguments=-c 'cd ~/project/Boceto && git pull origin main'"
+          
+          # ============================================
+          # 📦 Install dependencies and collect static
+          # ============================================
+          echo "📦 Running deployment commands..."
+          
+          curl -X POST \
+            -H "Authorization: Token ${PA_API_TOKEN}" \
+            "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/consoles/" \
+            -d "executable=bash&arguments=-c 'cd ~/project/Boceto && pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate --noinput'"
+          
+          # Wait for commands to execute
+          sleep 30
+          
+          # ============================================
+          # 🔃 Reload web app
+          # ============================================
+          echo "🔃 Reloading web app..."
+          
+          curl -X POST \
+            -H "Authorization: Token ${PA_API_TOKEN}" \
+            "https://www.pythonanywhere.com/api/v0/user/${PA_USERNAME}/webapps/${PA_DOMAIN}/reload/"
+          
+          echo "✅ Deployment completed!"
+      
+      # ============================================
+      # 📊 DEPLOYMENT STATUS
+      # ============================================
+      - name: Check deployment status
+        if: always()
+        run: |
+          echo "=========================================="
+          echo "📊 Deployment Summary"
+          echo "=========================================="
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Triggered by: ${{ github.actor }}"
+          echo "=========================================="
