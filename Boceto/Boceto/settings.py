@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config, Csv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,13 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-aj-wzfr3b1el&(qt$bhs%fi=t-ytnv1z(#7=ebz1o&z#)c7_wt"
+# ============================================
+# 🔐 CONFIGURACIÓN DE SEGURIDAD
+# ============================================
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECRET_KEY cargada desde variables de entorno
+SECRET_KEY = config('SECRET_KEY')
 
-ALLOWED_HOSTS = ["*"]
+# DEBUG desactivado por defecto para producción
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+# ALLOWED_HOSTS desde variables de entorno (lista separada por comas)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
 
 
 # Application definition
@@ -79,14 +85,17 @@ WSGI_APPLICATION = "Boceto.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# ============================================
+# 🗄️ CONFIGURACIÓN DE BASE DE DATOS
+# ============================================
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Vinculacion',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',  
-        'PORT': '3306',      
+        'NAME': config('DB_NAME', default='Vinculacion'),
+        'USER': config('DB_USER', default='root'),
+        'PASSWORD': config('DB_PASSWORD', default=''),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='3306'),
     }
 }
 
@@ -134,16 +143,16 @@ MEDIA_URL = "/media/"
 # almacenado en el proyecto.
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-from .config import EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
-# Configuración para el envío de correos
+# ============================================
+# 📧 CONFIGURACIÓN DE EMAIL
+# ============================================
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
-# Configuración de autenticación
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = EMAIL_HOST_USER  
-EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD  
-# Puerto que usa TLS
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_PORT = 587
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
